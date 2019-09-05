@@ -1,0 +1,76 @@
+{
+    "name": "wohlig-framework",
+    "version": "1.0.0",
+    "description": "Wohlig Framework",
+    "main": "app.js",
+    "repository": "https://github.com/WohligTechnology/WohligFramework.git",
+    "author": "Chintan Shah <chintan@wohlig.com>",
+    "license": "MIT",
+    "scripts": {
+        "start": "nodemon index.js",
+        "build": "docker build -t wohlig/wohlig-framework:latest .",
+        "serve": "docker run -p 3000:3000 wohlig/wohlig-framework:latest"
+    },
+    "dependencies": {
+        "wohlig-framework-core": "latest"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.1.2",
+        "@babel/plugin-transform-async-to-generator": "^7.1.0",
+        "@babel/plugin-transform-runtime": "^7.1.0",
+        "@babel/preset-env": "^7.1.0",
+        "@babel/register": "^7.0.0",
+        "@babel/runtime": "^7.1.2",
+        "eslint": "^5.6.0"
+    },
+    "prettier": {
+        "trailingComma": "none",
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": false,
+        "arrowParens": "always"
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es6": true
+        },
+        "extends": "eslint:recommended",
+        "parserOptions": {
+            "ecmaVersion": 8,
+            "sourceType": "module"
+        },
+        "rules": {
+            "no-undef": 1,
+            "no-unused-vars": 1,
+            "indent": [
+                "error",
+                4
+            ],
+            "linebreak-style": [
+                "error",
+                "unix"
+            ],
+            "quotes": [
+                "error",
+                "double"
+            ],
+            "semi": [
+                "error",
+                "never"
+            ]
+        },
+        "globals": {
+            "Router": true,
+            "global": true,
+            "app": true,
+            "ajv": true,
+            "_": true,
+            "ValidateRequest": true,
+            "StudentModel": true,
+            "mongoose": true,
+            "Schema": true,
+            "Student": true
+        }
+    }
+}
